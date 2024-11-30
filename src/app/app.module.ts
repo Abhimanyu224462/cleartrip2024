@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { HotelsModule } from './main/hotels/hotels.module';
 import { FlightsModule } from './main/flights/flights.module';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,6 +22,9 @@ import { FlightsModule } from './main/flights/flights.module';
     SharedModule,
     HotelsModule,
     FlightsModule,
+    CommonModule,
+    BrowserAnimationsModule
+   
     
 ],
   providers: [],

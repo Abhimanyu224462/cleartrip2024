@@ -2,7 +2,7 @@
     <h2 style="color: teal;">Search hotels</h2>
     <h5>Enjoy hassle free bookings with makeMyTrip!</h5>
 
-    <div class="border shadow container ">
+    <div class="border rounded shadow container ">
 
         <div class="col-md-12 d-flex">
             <div class="mb-3 mt-3 col-md-4 ">
@@ -11,7 +11,15 @@
               </div>
     
               <div class="mb-3 mt-3 col-md-4">
-    
+                
+                    <label for="datepicker" class="form-label">Pick a Date</label>
+                    <input type="text"
+                        class="form-group"
+                           placeholder="Daterangepicker"
+                           class="form-control"
+                           bsDaterangepicker
+                           name="datepicker">
+                  
               </div>
     
               <div class="mb-3 mt-3 col-md-4">
@@ -25,7 +33,10 @@
               </div>
 
         </div>
-        <button class="btn btn-success">Search</button>
+        <div class="text-center">
+            <button class="btn btn-success mb-3 ">Search Hotels</button>
+        </div>
+        
 
           
 
@@ -35,3 +46,7 @@
     
 
 </div>
+
+
+
+ 

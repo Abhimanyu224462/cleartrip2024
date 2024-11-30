@@ -8,6 +8,10 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
 import { HotelPaymentComponent } from './hotel-payment/hotel-payment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -24,6 +28,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HotelsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+
+    // BrowserAnimationsModule,
+    // NoopAnimationsModule,
+    BsDatepickerModule.forRoot()
     
   ],
   exports:[
