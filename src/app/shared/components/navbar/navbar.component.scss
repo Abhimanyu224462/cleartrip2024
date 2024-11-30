@@ -1,0 +1,32 @@
+li {
+    color: teal;
+    font-weight: 600;
+    list-style-type: none;
+}
+
+
+
+#iconNav{
+    // border-bottom: 1px solid red;
+    cursor: pointer;
+}
+
+#iconNav:hover{
+    border-bottom: 2px solid red;
+}
+
+#navicon{
+    transition: transform 0.3s;
+    
+}
+
+#navicon:hover{
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 4px solid red !important;
+    font-weight: 700;
+    
+}

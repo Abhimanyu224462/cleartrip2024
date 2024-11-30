@@ -7,6 +7,8 @@ import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
 import { HotelPaymentComponent } from './hotel-payment/hotel-payment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -19,7 +21,13 @@ import { HotelPaymentComponent } from './hotel-payment/hotel-payment.component';
   ],
   imports: [
     CommonModule,
-    HotelsRoutingModule
+    HotelsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
+  ],
+  exports:[
+    HotelBookingComponent
   ]
 })
 export class HotelsModule { }

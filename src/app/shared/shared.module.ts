@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -15,7 +16,14 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
+  ],
+  exports:[
+    FooterComponent,
+    HeaderComponent,
+    LoginComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

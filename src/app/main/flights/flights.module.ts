@@ -12,6 +12,9 @@ import { FlightsComponent } from './flights.component';
   imports: [
     CommonModule,
     FlightsRoutingModule
+  ],
+  exports: [
+    FlightsComponent
   ]
 })
 export class FlightsModule { }
