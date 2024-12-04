@@ -8,6 +8,7 @@ import { HotelsModule } from './main/hotels/hotels.module';
 import { FlightsModule } from './main/flights/flights.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http'
 
 
 
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HotelsModule,
     FlightsModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
    
     
 ],
