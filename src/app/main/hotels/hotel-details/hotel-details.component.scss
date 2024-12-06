@@ -1,0 +1,26 @@
+// .active1{
+//     color:blue;
+// }
+// a{
+//     cursor: pointer;
+   
+// }
+
+#tab{
+    cursor:pointer
+}
+
+#tab:hover{
+    font-weight: 400;
+    border-bottom: 2px solid rgb(89, 89, 252);
+
+}
+
+.active1{
+    font-weight: 500;
+    border-bottom: 4px solid blue($color: #6a62fb);
+}
+
+#bor:hover{
+    border-color: #5047f3 !important
+}

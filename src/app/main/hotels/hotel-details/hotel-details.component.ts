@@ -42,10 +42,6 @@ this.hotelList = res.response.personalizedSections[0].hotels
     console.log("response from db:", this.hotelList, this.roughprint)
   }
 })
-
-
-
 }
-
 
 }

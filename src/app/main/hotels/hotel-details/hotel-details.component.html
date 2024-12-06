@@ -1,7 +1,57 @@
-<p>hotel-details works!</p>
+<div class="mt-3 border bg-primary-subtle">
+    <ul class="nav justify-content-around">
 
-{{roughprint}}
+        <h6 class="mt-2 p-1">SORT BY:</h6>
 
-<ul *ngFor="let item of hotelList">
-    <li >{{item.name}}</li>
-</ul>
+        <li class="nav-item">
+            <a class="nav-link active1" id="tab" aria-current="page"> <span class="text-black"
+                    style="font-weight: 500;">Popular</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab"><span class="text-black" style="font-weight: 500;">User Rating</span> <span
+                    class="text-muted fs-6">(Highest First)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab"><span class="text-black" style="font-weight: 500;">Price</span> <span
+                    class="text-muted fs-6">(Highest First)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab" aria-disabled="true"><span class="text-black"
+                    style="font-weight: 500;">Price</span> <span class="text-muted fs-6">(Lowest First)</span></a>
+        </li>
+
+        <li>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 p-1 mt-1" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </li>
+    </ul>
+</div>
+
+<div class="container-fluid col-md-12 mt-2 d-flex">
+
+    <div class="col-md-3">
+
+    </div>
+
+    <div class="container-fluid col-md-9">
+
+        <div class="mt-2">
+            <h4 style="font-weight: 700; font-size:30px; font-family: sans-serif;">Showing Properties around Goa</h4>
+        </div>
+
+        <div class="d-flex border border-info-subtle rounded" id="bor">
+
+            <div class="col-md-9 ">
+                <h4>image and details image and details image and details image and details</h4>
+            </div>
+
+            <div class="col-md-3 border-start border-secondary-subtle">
+                <h4>ratings ratings ratings</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
