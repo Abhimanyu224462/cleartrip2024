@@ -17,7 +17,7 @@ constructor(private activateRoute:ActivatedRoute, private http:HttpService){
   this.hotelObj.checkout = this.activateRoute.snapshot.queryParamMap.get('checkout')
 }
 
-tab1:any
+tab1:string = ""
 
 
 hotelObj:any = {
@@ -34,7 +34,7 @@ ngOnInit(){
 }
 
 sortPopular(sort:any){
-  this.tab1 == sort
+  this.tab1 = sort
   this.hotelList.sort((a:any,b:any)=>b.reviewSummary.totalRatingCount - a.reviewSummary.totalRatingCount) 
 }
 

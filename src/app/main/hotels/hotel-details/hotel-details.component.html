@@ -3,20 +3,20 @@
 
         <h6 class="mt-2 p-1">SORT BY:</h6>
 
-        <li class="nav-item">
-            <a class="nav-link" id="tab" aria-current="page" [ngClass]="tab1 == 'popular' ? 'act' : ''" (click)="sortPopular('popular')"> <span class="text-black"
+        <li class="nav-item" [ngClass]="(tab1==='popular')?'act':''" (click)="sortPopular('popular')">
+            <a class="nav-link" id="tab" aria-current="page"> <span class="text-black"
                     style="font-weight: 500;">Popular</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="tab" [ngClass]="tab1 == 'rating' ? 'act' : ''" (click)="sortHotel('rating')"><span class="text-black" style="font-weight: 500;"  >User Rating</span> <span
+        <li class="nav-item" [ngClass]="tab1 === 'rating' ? 'act' : ''" (click)="sortHotel('rating')">
+            <a class="nav-link" id="tab" ><span class="text-black" style="font-weight: 500;"   >User Rating</span> <span
                     class="text-muted fs-6">(Highest First)</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="tab" [ngClass]="tab1 == 'price-highest' ? 'act' : ''" (click)="sortHotel('price-highest')"><span class="text-black" style="font-weight: 500;" >Price</span> <span
+        <li class="nav-item" [ngClass]="tab1 === 'price-highest' ? 'act' : ''" (click)="sortHotel('price-highest')">
+            <a class="nav-link" id="tab" ><span class="text-black" style="font-weight: 500;" >Price</span> <span
                     class="text-muted fs-6">(Highest First)</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="tab" [ngClass]="tab1 == 'price-lowest' ? 'act' : ''" (click)="sortHotel('price-lowest')"><span class="text-black" style="font-weight: 500;" >Price</span> <span class="text-muted fs-6">(Lowest First)</span></a>
+        <li class="nav-item" [ngClass]="tab1 === 'price-lowest' ? 'act' : ''" (click)="sortHotel('price-lowest')">
+            <a class="nav-link" id="tab" ><span class="text-black" style="font-weight: 500;" >Price</span> <span class="text-muted fs-6">(Lowest First)</span></a>
         </li>
 
         <li>
@@ -30,7 +30,7 @@
 <div class="container-fluid col-md-12 mt-2 d-flex">
 
     <div class="col-md-3">
-
+        <app-hotel-filter></app-hotel-filter>
     </div>
 
     <div class="container-fluid col-md-9">

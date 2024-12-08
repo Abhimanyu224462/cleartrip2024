@@ -17,10 +17,20 @@
 }
 
 .act{
-    color: solid red;
-    font-weight: 500;
-    border-bottom: 4px solid blue($color: #6a62fb);
+    
+    
+    // text-shadow: 1px 10px 3px rgb(231, 50, 50);
+    // text-shadow: -3px -3px 5px red;
+    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    // font-family: fantasy;
+    border-bottom: 4px solid rgb(100, 21, 247);
+    
+    
+    
+    
 }
+
+
 
 #bor:hover{
     border-color: #5047f3 !important

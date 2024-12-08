@@ -12,6 +12,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { HotelFilterComponent } from './hotel-filter/hotel-filter.component';
 
 
 
@@ -21,7 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
     HotelSearchComponent,
     HotelDetailsComponent,
     HotelBookingComponent,
-    HotelPaymentComponent
+    HotelPaymentComponent,
+    HotelFilterComponent
   ],
   imports: [
     CommonModule,
