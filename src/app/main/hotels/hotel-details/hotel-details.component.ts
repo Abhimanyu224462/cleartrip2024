@@ -17,6 +17,9 @@ constructor(private activateRoute:ActivatedRoute, private http:HttpService){
   this.hotelObj.checkout = this.activateRoute.snapshot.queryParamMap.get('checkout')
 }
 
+tab1:any
+
+
 hotelObj:any = {
   city:"",
   rooms:"",
@@ -28,6 +31,22 @@ roughprint:any
 ngOnInit(){
   console.log(this.hotelObj.city, this.hotelObj.rooms, this.hotelObj.checkin, this.hotelObj.checkout)
   this.getData()
+}
+
+sortPopular(sort:any){
+  this.tab1 == sort
+  this.hotelList.sort((a:any,b:any)=>b.reviewSummary.totalRatingCount - a.reviewSummary.totalRatingCount) 
+}
+
+sortHotel(sort:any){
+  this.tab1 = sort
+if(sort == 'rating'){
+  this.hotelList.sort((a:any,b:any)=>b.reviewSummary.cumulativeRating-a.reviewSummary.cumulativeRating)
+} else if (sort == 'price-highest'){
+  this.hotelList.sort((a:any,b:any)=>b.priceDetail.discountedPrice-a.priceDetail.discountedPrice)
+} else if (sort == 'price-lowest'){
+  this.hotelList.sort((a:any,b:any)=>a.priceDetail.discountedPrice-b.priceDetail.discountedPrice)
+}
 }
 
 //GET

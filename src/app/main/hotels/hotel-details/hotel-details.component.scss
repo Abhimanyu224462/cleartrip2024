@@ -16,11 +16,20 @@
 
 }
 
-.active1{
+.act{
+    color: solid red;
     font-weight: 500;
     border-bottom: 4px solid blue($color: #6a62fb);
 }
 
 #bor:hover{
     border-color: #5047f3 !important
+}
+
+.image-container img{
+transition: transform 0.3s;
+}
+
+.image-container:hover img{
+    transform: scale(1.2);
 }

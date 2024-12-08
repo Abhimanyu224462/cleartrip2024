@@ -4,20 +4,19 @@
         <h6 class="mt-2 p-1">SORT BY:</h6>
 
         <li class="nav-item">
-            <a class="nav-link active1" id="tab" aria-current="page"> <span class="text-black"
+            <a class="nav-link" id="tab" aria-current="page" [ngClass]="tab1 == 'popular' ? 'act' : ''" (click)="sortPopular('popular')"> <span class="text-black"
                     style="font-weight: 500;">Popular</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab"><span class="text-black" style="font-weight: 500;">User Rating</span> <span
+            <a class="nav-link" id="tab" [ngClass]="tab1 == 'rating' ? 'act' : ''" (click)="sortHotel('rating')"><span class="text-black" style="font-weight: 500;"  >User Rating</span> <span
                     class="text-muted fs-6">(Highest First)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab"><span class="text-black" style="font-weight: 500;">Price</span> <span
+            <a class="nav-link" id="tab" [ngClass]="tab1 == 'price-highest' ? 'act' : ''" (click)="sortHotel('price-highest')"><span class="text-black" style="font-weight: 500;" >Price</span> <span
                     class="text-muted fs-6">(Highest First)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab" aria-disabled="true"><span class="text-black"
-                    style="font-weight: 500;">Price</span> <span class="text-muted fs-6">(Lowest First)</span></a>
+            <a class="nav-link" id="tab" [ngClass]="tab1 == 'price-lowest' ? 'act' : ''" (click)="sortHotel('price-lowest')"><span class="text-black" style="font-weight: 500;" >Price</span> <span class="text-muted fs-6">(Lowest First)</span></a>
         </li>
 
         <li>
@@ -36,18 +35,42 @@
 
     <div class="container-fluid col-md-9">
 
-        <div class="mt-2">
+        <div class="mt-2 mb-3">
             <h4 style="font-weight: 700; font-size:30px; font-family: sans-serif;">Showing Properties around Goa</h4>
         </div>
 
-        <div class="d-flex border border-info-subtle rounded" id="bor">
+        <div class="d-flex border rounded-3 mb-3 bg-white" id="bor" *ngFor="let item of hotelList">
 
-            <div class="col-md-9 ">
-                <h4>image and details image and details image and details image and details</h4>
+            <div class="col-md-9 d-flex ">
+                <div class="image-container p-4 ms-1 ">
+                    <img class="rounded-2"
+                        [src]="item?.media[0]?.url"
+                        alt="">
+                </div>
+                <div class="me-1 ms-1 mt-2">
+                    <h5 class="mb-1 fw-bold">{{item?.name}}</h5>
+
+                    <p><span class="text-info">{{item.locationPersuasion[0]}}</span> | {{item.locationPersuasion[1]}} <i class="bi bi-map"></i></p>
+                    <p><i class="bi bi-backpack"></i>Restaurant & Bar</p>
+                    <p style="color: rgb(2, 145, 97);"><span><i class="bi bi-check2"></i>Free Cancellation till 24 hrs
+                            before check in <p style="color: rgb(94, 28, 3); font-size:small;"><i
+                                    class="bi bi-geo-alt"></i> Located near plantations, cooperative staff, good food
+                                with decent breakfast variety</p></span></p>
+
+                </div>
+
             </div>
 
-            <div class="col-md-3 border-start border-secondary-subtle">
-                <h4>ratings ratings ratings</h4>
+
+            <div class="col-md-3 border-start border-secondary-subtle text-end p-1 mt-2">
+                <h6><span style="color: rgb(76, 76, 250); font-weight: 700;">{{item.reviewSummary.ratingText}} </span> <span
+                        class="ms-1 badge bg-primary p-1 me-2 fs-6">{{item.reviewSummary.cumulativeRating}}</span></h6>
+                <p class="text-muted fs-6">({{item.reviewSummary.totalRatingCount}} Ratings)</p>
+                <p><span class="text-decoration-line-through text-muted">₹ {{item.priceDetail.price}}/-</span> <span>
+                        <h5 class="fw-bold">₹ {{item.priceDetail.discountedPrice}}/-</h5>
+                    </span></p>
+
+                <p class="text-muted">+ ₹ {{item.priceDetail.totalTax}} taxes & fees Per Night for 3 Rooms</p>
             </div>
 
         </div>
