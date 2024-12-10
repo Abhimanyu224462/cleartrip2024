@@ -8,6 +8,10 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./hotel-details.component.scss']
 })
 export class HotelDetailsComponent {
+  copyhotelList:any = [];
+
+
+
 
 constructor(private activateRoute:ActivatedRoute, private http:HttpService){
 
@@ -49,6 +53,35 @@ if(sort == 'rating'){
 }
 }
 
+//FILTER
+
+getfilterCriteria(data:any) {
+  console.log("filter criteria value recieved in detrails",data)
+  this.filterHotels(data)
+  }
+
+ filterHotels(criteria:any){
+  if(criteria.type == 'rating'){
+    if(criteria.isSelected){
+     this.hotelList =  this.copyhotelList.filter((el:any)=>el.reviewSummary.cumulativeRating > criteria.filterValue)
+      console.log("filter hotel criteria fired",this.copyhotelList)
+    } else {
+      this.hotelList = this.copyhotelList
+    }
+    
+  } else if (criteria.type == 'hotel_price_bucket'){
+    
+    this.hotelList = this.copyhotelList.filter((el:any)=> el.priceDetail.discountedPrice > criteria.filterRange.min && el.priceDetail.discountedPrice < criteria.filterRange.max)
+    
+    console.log("price criteria fired", this.hotelList)
+    if(this.hotelList.length == 0){
+      alert("No Record Found")
+      this.hotelList = this.copyhotelList
+    }
+  }
+ } 
+
+
 //GET
 
 getData(){
@@ -56,6 +89,7 @@ this.http.getDataFromServer('search-hotels',this.hotelObj).subscribe({
   next:(res:any)=>{
     if(res && res.response && res.response.personalizedSections){
 this.hotelList = res.response.personalizedSections[0].hotels
+this.copyhotelList = [...this.hotelList]
 // this.roughprint = res.response.personalizedSections[0].hotels
     }
     console.log("response from db:", this.hotelList, this.roughprint)

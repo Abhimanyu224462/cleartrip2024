@@ -30,7 +30,7 @@
 <div class="container-fluid col-md-12 mt-2 d-flex">
 
     <div class="col-md-3">
-        <app-hotel-filter></app-hotel-filter>
+        <app-hotel-filter (emitFilterObj)="getfilterCriteria($event)"></app-hotel-filter>
     </div>
 
     <div class="container-fluid col-md-9">
