@@ -39,7 +39,7 @@
             <h4 style="font-weight: 700; font-size:30px; font-family: sans-serif;">Showing Properties around Goa</h4>
         </div>
 
-        <div class="d-flex border rounded-3 mb-3 bg-white" id="bor" *ngFor="let item of hotelList">
+        <div class="d-flex border rounded-3 mb-3 bg-white" id="bor" *ngFor="let item of hotelList" routerLink="/hotels/hBooking" [queryParams]="{'id':item.id}">
 
             <div class="col-md-9 d-flex ">
                 <div class="image-container p-4 ms-1 ">

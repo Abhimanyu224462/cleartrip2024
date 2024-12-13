@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+selectedAct:string = "";
+
+
+getAction(action:any){
+this.selectedAct = action
+}
 
 }

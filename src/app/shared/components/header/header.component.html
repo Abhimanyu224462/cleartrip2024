@@ -25,12 +25,32 @@
           </li>
         
         </ul>
-        <form class="d-flex" role="search">
-          <button class="btn btn-outline-success">Login</button> &nbsp;
-          <button class="btn btn-outline-success">SignUP</button> &nbsp;
+        <div class="d-flex" role="search">
+          <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button> &nbsp;
+          <!-- <button class="btn btn-outline-success">SignUP</button> &nbsp; -->
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </div>
       </div>
     </div>
   </nav>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login/SignUP</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-login *ngIf="selectedAct != 'signup'" (emitAction)="getAction($event)"></app-login>
+          <app-signup *ngIf="selectedAct == 'signup'" (emitSignInAction)="getAction($event)"></app-signup>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-outline-success">Login</button>
+          <button type="button" class="btn btn-outline-success">SignUP</button> -->
+        </div>
+      </div>
+    </div>
+  </div>

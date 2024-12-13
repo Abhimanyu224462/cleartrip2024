@@ -9,6 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HotelDetailsComponent {
   copyhotelList:any = [];
+hID: any;
 
 
 
@@ -28,7 +29,8 @@ hotelObj:any = {
   city:"",
   rooms:"",
   checkin:null,
-  checkout:null
+  checkout:null,
+
 }
 hotelList:any
 roughprint:any

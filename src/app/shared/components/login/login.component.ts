@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+@Output()
+emitAction:EventEmitter<string> = new EventEmitter()
 
+loadSignup(){
+  this.emitAction.emit("signup")
+}
 }
