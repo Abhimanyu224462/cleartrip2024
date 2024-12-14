@@ -1,21 +1,40 @@
-<div class="container text-center">
-    <h3>SignUP</h3>
+<div class="container w-75">
+    
     <form action="">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div><div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div><div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
           </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password">
+          </div>
+
+          <div *ngIf="getotpclicked">
+            <label for="mobile" class="form-label">Mobile</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="mobile" placeholder="Mobile" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getotp()" (click)="toggleotp()">Get OTP</button>
+            </div>
+          </div>
+
+          <div *ngIf="otpmatched">
+            <label for="mobile" class="form-label">Enter OTP</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="mobile" name="enteredotp" [(ngModel)] = "enteredotp"
+                placeholder="Enter OTP" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="verifyotp()">Verify OTP</button>
+            </div>
+          </div>
     </form>
-    <button class="btn btn-outline-success w-75">SignUP</button>
-    <button class="btn btn-outline-success w-75 mt-2 " (click)="navigateToSignIn()">login</button>
+
+    <div class="text-center">
+      <button class="btn btn-outline-success w-75">SignUP</button>
+      <button class="btn btn-outline-success w-75 mt-2 " (click)="clicklogin()" >login</button>
+
+    </div>
 </div>

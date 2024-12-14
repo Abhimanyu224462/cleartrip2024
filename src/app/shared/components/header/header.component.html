@@ -44,8 +44,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <app-login *ngIf="selectedAct != 'signup'" (emitAction)="getAction($event)"></app-login>
-          <app-signup *ngIf="selectedAct == 'signup'" (emitSignInAction)="getAction($event)"></app-signup>
+          <app-login *ngIf="isSelected == 'login'" (emitsignup)="getAction($event)" ></app-login>
+          <app-signup *ngIf="isSelected != 'login'" (emitlogin)="getAction($event)" ></app-signup>
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-outline-success">Login</button>

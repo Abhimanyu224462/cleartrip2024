@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-selectedAct:string = "";
 
+isSelected: any;
 
-getAction(action:any){
-this.selectedAct = action
-}
-
+getAction(data:any) {
+this.isSelected = data
+console.log("emit login:", this.isSelected)
+  }
 }

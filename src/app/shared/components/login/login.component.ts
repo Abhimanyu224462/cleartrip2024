@@ -6,10 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-@Output()
-emitAction:EventEmitter<string> = new EventEmitter()
 
-loadSignup(){
-  this.emitAction.emit("signup")
+@Output()
+emitsignup:EventEmitter<string> = new EventEmitter
+
+clicksignup(){
+  this.emitsignup.emit('signup')
 }
+
+
 }
