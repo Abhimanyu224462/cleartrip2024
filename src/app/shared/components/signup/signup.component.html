@@ -23,12 +23,17 @@
           </div>
 
           <div *ngIf="otpmatched">
-            <label for="mobile" class="form-label">Enter OTP</label>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" id="mobile" name="enteredotp" [(ngModel)] = "enteredotp"
-                placeholder="Enter OTP" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="verifyotp()">Verify OTP</button>
-            </div>
+           
+
+              <label for="mobile" class="form-label">Enter OTP</label>
+              <div class="input-group mb-3">
+                <input [disabled]="verifyok1" type="password" class="form-control" id="mobile" name="enteredotp" [(ngModel)] = "enteredotp"
+                  placeholder="Enter OTP" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button *ngIf="verifyok" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="verifyotp()">Verify OTP</button>
+                <div style="height: 50; width: 50;" *ngIf="verifyok1"><i class="bi bi-check-lg btn btn-outline-success" ></i></div>
+               <div class="btn btn-outline-success">{{interval}}</div>
+              </div>
+           
           </div>
     </form>
 
